@@ -48,7 +48,17 @@ radiusInput.addEventListener("input", e => {
 });
 
 /** @type {HTMLInputElement} */
-const gradientInput = document.getElementById("gradient");
-gradientInput.addEventListener("input", e => {
-    document.documentElement.style.setProperty("--gradient", gradientInput.value + "%");
+const rBrInput = document.getElementById("rBr");
+rBrInput.addEventListener("input", e => {
+    document.documentElement.style.setProperty("--rBr", rBrInput.value);
+});
+/** @type {HTMLInputElement} */
+const gBrInput = document.getElementById("gBr");
+gBrInput.addEventListener("input", e => {
+    document.documentElement.style.setProperty("--gBr", rBrInput.value);
+});
+/** @type {HTMLInputElement} */
+const bBrInput = document.getElementById("bBr");
+bBrInput.addEventListener("input", e => {
+    document.documentElement.style.setProperty("--bBr", rBrInput.value);
 });

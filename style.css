@@ -33,15 +33,9 @@ html, body {
 .dragged {
     cursor: move;
 }
-#r {
-    --background: #ff0000;
-}
-#g {
-    --background: #00ff00;
-}
-#b {
-    --background: #0000ff;
-}
+#r { --background: #ff0000; opacity: var(--rBr); }
+#g { --background: #00ff00; opacity: var(--gBr); }
+#b { --background: #0000ff; opacity: var(--bBr); }
 
 #settings {
     position: absolute;
@@ -76,3 +70,31 @@ input[type=number] {
 label {
     font-size: 20px;
 }
+
+.coloredRange {
+    --color: #ffffff;
+    appearance: none;
+    -webkit-appearance: none;
+
+    height: 10px;
+    background: var(--color);
+    border-radius: 5px;
+}
+.coloredRange:hover {
+    filter: brightness(90%);
+}
+.coloredRange::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-top: 0px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#rBr { --color: #ff0000; }
+#gBr { --color: #00ff00; }
+#bBr { --color: #0000ff; }
