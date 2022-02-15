@@ -17,12 +17,12 @@ html, body {
     position: absolute;
     cursor: pointer;
 }
-.r {
+#r {
     background: #ff0000;
 }
-.g {
+#g {
     background: #00ff00;
 }
-.b {
+#b {
     background: #0000ff;
 }

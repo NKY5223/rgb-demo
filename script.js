@@ -1,4 +1,4 @@
-let CIRCLE_SIZE = 250;
+let RADIUS = 250;
 
 const r = document.getElementById("r");
 const g = document.getElementById("g");
