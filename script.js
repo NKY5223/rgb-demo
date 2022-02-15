@@ -7,8 +7,8 @@ document.addEventListener("mouseup", _ => { dragging = null });
 document.addEventListener("blur", _ => { dragging = null });
 document.addEventListener("mousemove", e => {
     if (dragging) {
-        dragging.style.left = e.clientX - 50;
-        dragging.style.top = e.clientY - 50;
+        dragging.style.left = e.clientX - 50 + "px";
+        dragging.style.top = e.clientY - 50 + "px";
     }
 });
 [r, g, b].forEach(e => document.body.append(e));
