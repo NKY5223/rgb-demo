@@ -1,28 +1,78 @@
 :root {
-    --r: 125px;
+    --radius: 125px;
+    --gradient: 0%;
 }
+
 html, body {
     height: 100%;
     margin: 0;
     background: #000000;
+    user-select: none;
+    overflow: hidden;
+    font-family: Consolas, monospace;
+    color: #ffffff;
 }
 
 .c {
+    --background: #000000;
     mix-blend-mode: screen;
 
-    width: calc(2 * var(--r));
-    height: calc(2 * var(--r));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(2 * var(--radius));
+    height: calc(2 * var(--radius));
+    transform: translate(-50%, -50%);
 
     border-radius: 50%;
-    position: absolute;
-    cursor: pointer;
+    cursor: grab;
+
+    background: radial-gradient(closest-side, var(--background), var(--background) calc(100% - var(--gradient)), #000000 99.9%);
+}
+
+.dragged {
+    cursor: move;
 }
 #r {
-    background: #ff0000;
+    --background: #ff0000;
 }
 #g {
-    background: #00ff00;
+    --background: #00ff00;
 }
 #b {
-    background: #0000ff;
+    --background: #0000ff;
+}
+
+#settings {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #00000040;
+    padding: 10px;
+}
+input[type=number], input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: -2px;
+    color: #ffffff;
+    font: 20px Consolas, monospace;
+}
+input[type=number]:hover, input[type=number]:focus, input[type=text]:hover, input[type=text]:focus {
+    border-bottom-width: 3px;
+    margin-bottom: -3px;
+}
+input:focus {
+    outline: none;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+label {
+    font-size: 20px;
 }

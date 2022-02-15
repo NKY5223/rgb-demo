@@ -1,5 +1,4 @@
-let RADIUS = 250;
-
+let RADIUS = 125;
 const r = document.getElementById("r");
 const g = document.getElementById("g");
 const b = document.getElementById("b");
@@ -15,10 +14,41 @@ a.forEach(el => el.addEventListener("mousedown", e => {
     dragY = e.offsetY;
 }));
 document.addEventListener("mouseup", _ => dragging = null);
-document.addEventListener("blur", _ => dragging = null);
+window.addEventListener("blur", _ => dragging = null);
 document.addEventListener("mousemove", e => {
     if (dragging) {
-        dragging.style.left = e.clientX - dragX + "px";
-        dragging.style.top = e.clientY - dragY + "px";
+        dragging.style.left = e.clientX - dragX + RADIUS + "px";
+        dragging.style.top = e.clientY - dragY + RADIUS + "px";
     }
+});
+
+{
+    let w = document.documentElement.clientWidth / 2;
+    let h = document.documentElement.clientHeight / 2;
+    let x = RADIUS / 2;
+    let y = RADIUS * Math.sqrt(3) / 3;
+    let y2 = y / 2;
+
+    r.style.left = w + "px";
+    r.style.top = h - y + "px";
+
+    g.style.left = w - x + "px";
+    g.style.top = h + y2 + "px";
+
+    b.style.left = w + x + "px";
+    b.style.top = h + y2 + "px";
+}
+
+
+/** @type {HTMLInputElement} */
+const radiusInput = document.getElementById("radius");
+radiusInput.addEventListener("input", e => {
+    RADIUS = Number(radiusInput.value);
+    document.documentElement.style.setProperty("--radius", radiusInput.value + "px");
+});
+
+/** @type {HTMLInputElement} */
+const gradientInput = document.getElementById("gradient");
+gradientInput.addEventListener("input", e => {
+    document.documentElement.style.setProperty("--gradient", gradientInput.value + "%");
 });
