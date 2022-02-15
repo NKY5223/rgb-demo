@@ -1,0 +1,28 @@
+:root {
+    --r: 125px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #000000;
+}
+
+.c {
+    mix-blend-mode: screen;
+
+    width: calc(2 * var(--r));
+    height: calc(2 * var(--r));
+
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+.r {
+    background: #ff0000;
+}
+.g {
+    background: #00ff00;
+}
+.b {
+    background: #0000ff;
+}
