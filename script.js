@@ -46,6 +46,13 @@ radiusInput.addEventListener("input", e => {
     RADIUS = Number(radiusInput.value);
     document.documentElement.style.setProperty("--radius", radiusInput.value + "px");
 });
+radiusInput.addEventListener("wheel", e => {
+    if (e.deltaY > 0) radiusInput.value = Number(radiusInput.value) - 5;
+    else radiusInput.value = Number(radiusInput.value) + 5;
+
+    RADIUS = Number(radiusInput.value);
+    document.documentElement.style.setProperty("--radius", radiusInput.value + "px");
+});
 
 /** @type {HTMLInputElement} */
 const rBrInput = document.getElementById("rBr");
