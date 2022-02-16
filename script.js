@@ -55,10 +55,10 @@ rBrInput.addEventListener("input", e => {
 /** @type {HTMLInputElement} */
 const gBrInput = document.getElementById("gBr");
 gBrInput.addEventListener("input", e => {
-    document.documentElement.style.setProperty("--gBr", rBrInput.value);
+    document.documentElement.style.setProperty("--gBr", gBrInput.value);
 });
 /** @type {HTMLInputElement} */
 const bBrInput = document.getElementById("bBr");
 bBrInput.addEventListener("input", e => {
-    document.documentElement.style.setProperty("--bBr", rBrInput.value);
+    document.documentElement.style.setProperty("--bBr", bBrInput.value);
 });
