@@ -106,3 +106,19 @@ label {
 #rBr { --color: #ff0000; }
 #gBr { --color: #00ff00; }
 #bBr { --color: #0000ff; }
+
+
+button {
+    background: #2080ff80;
+    font: 15px Consolas, monospace;
+    color: #ffffff;
+    border: none;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+}
+#reset {
+    float: right;
+}

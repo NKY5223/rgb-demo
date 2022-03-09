@@ -22,7 +22,7 @@ document.addEventListener("mousemove", e => {
     }
 });
 
-{
+function resetPos() {
     let w = document.documentElement.clientWidth / 2;
     let h = document.documentElement.clientHeight / 2;
     let x = RADIUS / 2;
@@ -38,6 +38,7 @@ document.addEventListener("mousemove", e => {
     b.style.left = w + x + "px";
     b.style.top = h + y2 + "px";
 }
+resetPos();
 
 
 /** @type {HTMLInputElement} */
@@ -69,3 +70,6 @@ const bBrInput = document.getElementById("bBr");
 bBrInput.addEventListener("input", e => {
     document.documentElement.style.setProperty("--bBr", bBrInput.value);
 });
+
+const resetBtn = document.getElementById("reset");
+resetBtn.addEventListener("click", resetPos);
